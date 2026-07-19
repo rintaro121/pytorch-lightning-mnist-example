@@ -1,0 +1,13 @@
+[project]
+name = "pytorch-lightning-mnist-example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "lightning>=2.6.5",
+    "mlflow>=3.14.0",
+    "numpy<2",
+    "torch<=2.2",
+    "torchvision>=0.17.0",
+]
