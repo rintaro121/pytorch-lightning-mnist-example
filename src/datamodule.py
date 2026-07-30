@@ -10,11 +10,13 @@ class MNISTDataModule(L.LightningDataModule):
         data_dir="data",
         batch_size=64,
         num_workers=4,
+        persistent_workers=True,
     ):
         super().__init__()
         self.data_dir = data_dir
         self.batch_size = batch_size
         self.num_workers = num_workers
+        self.persistent_workers = persistent_workers and num_workers > 0
 
         self.transform = transforms.Compose(
             [
@@ -47,7 +49,7 @@ class MNISTDataModule(L.LightningDataModule):
             batch_size=self.batch_size,
             shuffle=True,
             num_workers=self.num_workers,
-            persistent_workers=True,
+            persistent_workers=self.persistent_workers,
         )
 
     def val_dataloader(self):
@@ -56,7 +58,7 @@ class MNISTDataModule(L.LightningDataModule):
             batch_size=self.batch_size,
             shuffle=False,
             num_workers=self.num_workers,
-            persistent_workers=True,
+            persistent_workers=self.persistent_workers,
         )
 
     def test_dataloader(self):
@@ -65,5 +67,5 @@ class MNISTDataModule(L.LightningDataModule):
             batch_size=self.batch_size,
             shuffle=False,
             num_workers=self.num_workers,
-            persistent_workers=True,
+            persistent_workers=self.persistent_workers,
         )

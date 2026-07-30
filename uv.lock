@@ -2055,6 +2055,7 @@ dependencies = [
     { name = "lightning" },
     { name = "mlflow" },
     { name = "numpy" },
+    { name = "pyyaml" },
     { name = "torch" },
     { name = "torchvision" },
 ]
@@ -2064,6 +2065,7 @@ requires-dist = [
     { name = "lightning", specifier = ">=2.6.5" },
     { name = "mlflow", specifier = ">=3.14.0" },
     { name = "numpy", specifier = "<2" },
+    { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "torch", specifier = "<=2.2" },
     { name = "torchvision", specifier = ">=0.17.0" },
 ]

@@ -3,13 +3,20 @@
 Simple example of training a MLP classifier on MNIST with PyTorch Lightning.  
 Training metrics and artifacts are logged with MLflow.
 
+
 ## Run Training
 
-Install the dependencies and run the training script:
+Install the dependencies and run the training script from the project root:
 
 ```bash
 uv sync
 uv run python src/train.py
+```
+
+Training parameters are defined in `configs/exp001.yaml`. To use another config:
+
+```bash
+uv run python src/train.py --config configs/exp001.yaml
 ```
 
 Training results are written under `outputs/`:
